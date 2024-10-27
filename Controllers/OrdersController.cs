@@ -10,7 +10,7 @@ namespace POS.Controllers
     public class OrdersController : Controller
     {
         // GET: Orders
-        public ActionResult Index(Order order )
+        public ActionResult Index(Order order)
         {
             return View(order);
         }
@@ -20,7 +20,7 @@ namespace POS.Controllers
         {
             return View();
         }
-        
+
         [HttpPost]
         [ActionName("Guardar")]
         public ActionResult NuevoPost(Order orden)
