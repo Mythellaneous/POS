@@ -1,0 +1,147 @@
+﻿@model POS.Models.Faculty
+
+@{
+    ViewBag.Title = "Login";
+}
+
+<link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/sign-in/">
+<!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+        html,
+        body {
+            height: 100%;
+        }
+
+    body {
+        color: white;
+        display: flex;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        width: 1300px;
+        background: #232427;
+    }
+
+        .form-signin {
+            width: 100%;
+            max-width: 270px;
+            padding: 15px;
+            margin: auto;
+        }
+
+        .form-signin .checkbox {
+            font-weight: 400;
+        }
+
+        .form-signin .form-floating:focus-within {
+            z-index: 2;
+        }
+
+        .form-signin input[type="email"] {
+            margin-bottom: -1px;
+            border-bottom-right-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+        .btn-lg, .btn-group-lg > .btn {
+            padding: 13px 16px;
+            font-size: 18px;
+            line-height: 1.3333333;
+            border-radius: 10px;
+            margin-right:30px;
+            margin-left: 30px;
+        }
+</style>
+
+
+@using (Html.BeginForm("Iniciar Sesion", "Faculty", FormMethod.Post))
+{
+    <fieldset>
+        <legend></legend>
+
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        @if (@ViewBag.Message != null)
+        {
+            <div style="border: 1px solid red">
+                @ViewBag.Message
+            </div>
+        }
+
+        <!--
+            <table>
+                <tr>
+                    <td>@Html.LabelFor(a => a.Email)</td>
+                    <td>@Html.TextBoxFor(a => a.Email)</td>
+                    <td>@Html.ValidationMessageFor(a => a.Email)</td>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.LabelFor(a => a.Password)
+                    </td>
+                    <td>
+                        @Html.PasswordFor(a => a.Password)
+                    </td>
+                    <td>
+                        @Html.ValidationMessageFor(a => a.Password)
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="Login" />
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+        -->
+        <html lang="en">
+        <body class="text-center">
+            <main class="form-signin">
+                <form>
+                    <h1 class="h3 mb-3 fw-normal">Please Log In</h1>
+
+                    <br />
+
+                    <div class="form-floating">
+                        @Html.LabelFor(a => a.Email, "", new { @for = "floatingInput" })
+                        @Html.TextBoxFor(a => a.Email, "", new { @class = "form-control", @id = "floatingInput", @placeholder = "username@example.com", @type = "email" })
+                        @Html.ValidationMessageFor(a => a.Email, "", new { @class = "" })
+                        <!--
+        <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
+         -->
+                    </div>
+
+                    <br />
+
+                    <div class="form-floating">
+                        @Html.LabelFor(a => a.Password, "", new { @for = "floatingPassword" })
+                        <!--
+                            <input type="password" class="form-control" id="floatingPassword" placeholder="Password", />
+                        -->
+                        @Html.PasswordFor(a => a.Password, new { @class = "form-control", @id = "floatingPassword", @placeholder = "Password", @type = "password" })
+                        @Html.ValidationMessageFor(a => a.Password)
+                    </div>
+
+                    <br />
+
+                    <button class="w-100 btn btn-lg btn-primary" type="submit" value="Login">Sign in</button>
+                </form>
+            </main>
+        </body>
+    </html>
+
+</fieldset>
+}

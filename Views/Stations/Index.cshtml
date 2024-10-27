@@ -1,0 +1,54 @@
+﻿@model IEnumerable<POS.Models.Station>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Estaciones de Comida</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Item_Qty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order_DateTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Menu.Station)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Order.Order_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plan.Plan_Days)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Item_Qty)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order_DateTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Menu.Station)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Order.Order_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Plan.Plan_Days)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Station_Name }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Station_Name }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Station_Name })
+        </td>
+    </tr>
+}
+
+</table>

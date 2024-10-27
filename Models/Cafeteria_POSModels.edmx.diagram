@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b48351e02554cb3a90975b65bcf4935" Name="Diagram1">
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Faculty" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.KU_Students" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Language_Students" Width="1.5" PointX="3" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Menu" Width="1.5" PointX="8.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Order" Width="1.5" PointX="8.25" PointY="10.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Plan" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.Station" Width="1.5" PointX="6" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="Cafeteria_POSModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Faculty_Plans" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_KU_Students_Plans" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Language_Students_Plans" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Menu_Stations" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Stations_Menu" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Orders_Stations" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Stations_Orders" ManuallyRouted="false" />
+        <AssociationConnector Association="Cafeteria_POSModel.FK_Stations_Plans" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

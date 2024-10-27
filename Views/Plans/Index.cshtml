@@ -1,0 +1,58 @@
+﻿@model IEnumerable<POS.Models.Plan>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Planes Alimenticios</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            <bold>
+                PLan Days
+            </bold>
+        </th>
+        <th>
+            <bold>
+                Meal
+            </bold>
+        </th>
+        <th>
+            <bold>
+                Plan Price
+            </bold>
+        </th>
+        <th>
+            <bold>
+                Members of the Plan
+            </bold>
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plan_Days)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Meal)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plan_Price)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plan_TotalMembers)
+    </td>
+    <!--
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id=item.Plan_Name }) |
+        @Html.ActionLink("Details", "Details", new { id=item.Plan_Name }) |
+        @Html.ActionLink("Delete", "Delete", new { id=item.Plan_Name })
+    </td>
+    -->
+</tr>
+}
+
+</table>

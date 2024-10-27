@@ -1,0 +1,105 @@
+﻿@model IEnumerable<POS.Models.Language_Students>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index Language Students</h2>
+
+<p>
+    @Html.ActionLink("Crear Nuevo", "Guardar")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Organization_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Student_ID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Last_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone_Number)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Address)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Enrolled_Course)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Photo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Resident)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meal_Plan)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Meal_Plan_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Plan.Plan_Days)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.Organization_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Student_ID)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.First_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.First_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.First_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Last_Name)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Phone_Number)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Address)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Enrolled_Course)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Photo)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Resident)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Meal_Plan)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Meal_Plan_Status)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.Plan.Plan_Days)
+    </td>
+    <td>
+        @Html.ActionLink("Editar", "Editar", new { id = item.Student_ID }) |
+        @Html.ActionLink("Details", "Details", new { id = item.Student_ID }) |
+        @Html.ActionLink("Delete", "Eliminar", new { id = item.Student_ID })
+    </td>
+</tr>
+}
+
+</table>
